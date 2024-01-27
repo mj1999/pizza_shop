@@ -1,23 +1,23 @@
 import { useState } from "react";
 import styles from "../styles/OrderForm.module.css";
+import { addOrder } from "../actions";
 
-function NewOrderForm({ setVisible }) {
+function NewOrderForm({ setVisible, store }) {
   const [type, setType] = useState("");
   const [size, setSize] = useState("");
   const [base, setBase] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!type || !size || !base) {
+      alert("Select all options please");
+      return;
+    }
+    store.dispatch(addOrder({ type, size, base, stage: "placed" }));
+    console.log(store.getState());
+    setVisible(false);
+  }
   return (
-    <form
-      className={styles.display}
-      onSubmit={(e) => {
-        e.preventDefault();
-        if (!type || !size || !base) {
-          alert("Select all options please");
-          return;
-        }
-        console.log(type + " " + size + " " + base);
-        setVisible(false);
-      }}
-    >
+    <form className={styles.display} onSubmit={handleSubmit}>
       <div className={styles.options}>
         <div className={styles.optionDesc}>Pizza Type:</div>
         <div
