@@ -1,0 +1,38 @@
+.display {
+  height: 100%;
+  margin: auto;
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("https://images7.alphacoders.com/858/858236.jpg");
+}
+
+.leftBox,
+.rightBox {
+  width: 40%;
+  height: 78vh;
+  box-shadow: 0 0 3px 1px grey;
+  border-radius: 10px;
+  /* background-color: white; */
+  background-position: center;
+  border: 4px solid rgb(199, 138, 24);
+  background-image: url(https://th.bing.com/th/id/R.891bb436b8cc6366f875bcc21d9d80c2?rik=6OhWYUzM4YG3ZA&riu=http%3a%2f%2fstatic.vecteezy.com%2fsystem%2fresources%2fpreviews%2f000%2f083%2f246%2fnon_2x%2ffree-vector-cheese-background.jpg&ehk=FIuqbxwJZ3RLwQqZfYq2zQu2spwIsFMch176s25FL4g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1);
+}
+.leftBox {
+  width: 45%;
+}
+
+.addOrder {
+  width: 5%;
+  padding: 1%;
+  height: 10vh;
+  box-shadow: 0 0 5px 2px grey;
+  background-image: url(https://th.bing.com/th/id/R.11708980987f303e4e27a3d9c8b47378?rik=LGxQf5M9hj0zHg&riu=http%3a%2f%2ffc09.deviantart.net%2ffs71%2ff%2f2011%2f013%2f3%2fb%2fnew_order_logo_by_daniel_s_design-d3748b7.png&ehk=1d5UZfWhevOK1SHiIP4%2fPDrlYj%2fAVylzi19Vcm4ysAo%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1);
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 10%;
+  cursor: pointer;
+  background-color: white;
+}
