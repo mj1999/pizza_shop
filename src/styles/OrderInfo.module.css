@@ -52,10 +52,15 @@
   .tableHeader {
     font-size: 1.2rem;
   }
+  .display > div > span {
+    border-radius: 6px;
+  }
   .item {
     font-size: 1rem;
+    border-radius: 8px;
   }
   .completedOrders {
     font-size: 1.2rem;
+    border-radius: 6px;
   }
 }
