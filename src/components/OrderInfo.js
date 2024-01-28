@@ -5,7 +5,10 @@ import OrderItem from "./OrderItem";
 function OrderInfo({ store }) {
   const [items, setItems] = useState([]);
   store.subscribe(() => {
-    setItems(store.getState().orders);
+    const orders = store
+      .getState()
+      .orders.sort((a, b) => a.timeCreated - b.timeCreated);
+    setItems(orders);
   });
   return (
     <div className={styles.display}>
