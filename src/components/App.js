@@ -6,6 +6,7 @@ import styles from "../styles/App.module.css";
 import NewOrderForm from "./NewOrderForm";
 import OrderInfo from "./OrderInfo";
 import orders from "../reducers";
+import StageControl from "./StageControl";
 
 const store = createStore(orders);
 
@@ -16,7 +17,9 @@ function App() {
       <div className={styles.leftBox}>
         <OrderInfo store={store} />
       </div>
-      <div className={styles.rightBox}></div>
+      <div className={styles.rightBox}>
+        <StageControl store={store} />
+      </div>
       <div
         className={styles.addOrder}
         onClick={() => {

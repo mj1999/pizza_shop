@@ -6,14 +6,29 @@ function NewOrderForm({ setVisible, store }) {
   const [type, setType] = useState("");
   const [size, setSize] = useState("");
   const [base, setBase] = useState("");
+  const timeCreated = Date.now();
   function handleSubmit(e) {
     e.preventDefault();
     if (!type || !size || !base) {
       alert("Select all options please");
       return;
     }
-    store.dispatch(addOrder({ type, size, base, stage: "placed" }));
-    console.log(store.getState());
+    if (store.getState().orders.length === 10) {
+      alert(
+        "Cant take any more orders, wait for existing orders to be completed"
+      );
+      setVisible(false);
+      return;
+    }
+    store.dispatch(
+      addOrder({
+        type,
+        size,
+        base,
+        stage: "placed",
+        timeCreated,
+      })
+    );
     setVisible(false);
   }
   return (
