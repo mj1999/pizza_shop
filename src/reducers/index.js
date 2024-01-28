@@ -19,9 +19,8 @@ export default function orders(state = initialState, action) {
       };
     case changeStageAction:
       const order = state.orders.find((item) => item.id === action.id);
-      console.log(action);
-      console.log(order);
       order.stage = action.newStage;
+      order.timeUpdated = Date.now();
       if (order.stage === "picked") {
         return {
           orders: [...state.orders.filter((item) => item.id !== action.id)],

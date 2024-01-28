@@ -79,28 +79,48 @@ function OrderItem({ item, store }) {
     store.dispatch(changeStage(item.id, newStage));
   }
 
-  useEffect(() => {
-    let secs = 1;
-    let mins = 0;
+  // useEffect(() => {
+  //   let secs = 1;
+  //   let mins = 0;
 
+  //   const interval = setInterval(() => {
+  //     secs++;
+  //     if (secs === 60) {
+  //       secs = 0;
+  //       mins++;
+  //     }
+  //     if (
+  //       ((mins >= 3 && item.size === "small") ||
+  //         (mins >= 4 && item.size === "medium") ||
+  //         (mins >= 5 && item.size === "large")) &&
+  //       !overdue
+  //     ) {
+  //       setOverdue(true);
+  //     }
+  //     setTime(mins + " min " + secs + " sec");
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      secs++;
-      if (secs === 60) {
-        secs = 0;
-        mins++;
-      }
+      const diff = Date.now() - item.timeUpdated;
+      const secs = Math.round(diff / 1000) % 60;
+      const mins = Math.floor(diff / (1000 * 60));
       if (
-        ((mins >= 3 && item.size === "small") ||
-          (mins >= 4 && item.size === "medium") ||
-          (mins >= 5 && item.size === "large")) &&
-        !overdue
+        (mins >= 3 && item.size === "small") ||
+        (mins >= 4 && item.size === "medium") ||
+        (mins >= 5 && item.size === "large")
       ) {
         setOverdue(true);
+      } else {
+        setOverdue(false);
       }
       setTime(mins + " min " + secs + " sec");
     }, 1000);
     return () => clearInterval(interval);
   }, [item]);
+
   return (
     <div className={styles.orderItem} style={DynamicStyles}>
       <div>Order Number: {item.id}</div>

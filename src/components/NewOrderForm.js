@@ -27,6 +27,7 @@ function NewOrderForm({ setVisible, store }) {
         base,
         stage: "placed",
         timeCreated,
+        timeUpdated: timeCreated,
       })
     );
     setVisible(false);
