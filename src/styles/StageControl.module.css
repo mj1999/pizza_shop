@@ -11,7 +11,7 @@
   flex-direction: column;
 }
 .boxHeading {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(80, 80, 80);
   background-color: white;
   width: fit-content;
@@ -41,4 +41,13 @@
   border: 2px solid green;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .orderItem {
+    font-size: 0.7rem;
+  }
+  .nextBtn {
+    font-size: 0.7rem;
+  }
 }

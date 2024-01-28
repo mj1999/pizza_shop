@@ -47,3 +47,15 @@
   position: absolute;
   bottom: 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .tableHeader {
+    font-size: 1.2rem;
+  }
+  .item {
+    font-size: 1rem;
+  }
+  .completedOrders {
+    font-size: 1.2rem;
+  }
+}
