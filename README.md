@@ -1,3 +1,10 @@
+# Pizza Shop aaplication 
+An application for tracking pizza orders and viewing order status and also for employees to control order stage for the pizza. Project made leveraging, React, Redux, HTML , CSS, Javascript.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
