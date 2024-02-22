@@ -1,5 +1,12 @@
-# Pizza Shop aaplication 
-An application for tracking pizza orders and viewing order status and also for employees to control order stage for the pizza. Project made leveraging, React, Redux, HTML , CSS, Javascript.
+# Pizza Shop Companion
+ A web application made on react leveraging redux state management to display and manage order information for a
+pizza shop. Employees can interact with the application to relay information about the current process and state of
+orders to the customers and customers can view real time status of their orders including the time elapsed in each
+order stage
+
+
+Live At : https://pizza-shop-blue.vercel.app/
+
 
 
 
